@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col s3">
-      <app-video-list [videoList]="videos"></app-video-list>
+      <app-video-list
+        (selectVideo)="updateSelectedVideo($event)"
+        [selectedVideo]="selectedVideo"
+        [videoList]="videos"
+      ></app-video-list>
     </div>
     <div class="col s3">
-      <app-video-player></app-video-player>
+      <app-video-player [video]="selectedVideo"></app-video-player>
     </div>
   </div>
 </div>
