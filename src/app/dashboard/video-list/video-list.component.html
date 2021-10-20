@@ -3,7 +3,7 @@
     class="collection-item"
     (click)="selectVideo(video)"
     *ngFor="let video of videoList"
-    [class.active]="selectedVideo.id === video.id"
+    [class.active]="selectedVideo?.id === video.id"
   >
     {{ video.title }}
   </li>
