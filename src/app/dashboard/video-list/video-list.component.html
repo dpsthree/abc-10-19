@@ -1,8 +1,9 @@
-<ul>
+<ul class="collection">
   <li
+    class="collection-item"
     (click)="selectVideo(video)"
     *ngFor="let video of videoList"
-    [class.selected]="selectedVideo.id === video.id"
+    [class.active]="selectedVideo.id === video.id"
   >
     {{ video.title }}
   </li>
