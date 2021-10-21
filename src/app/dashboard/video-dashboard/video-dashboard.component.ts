@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Video } from '../../app.types';
 import { DashboardService } from '../dashboard.service';
 
@@ -8,10 +9,10 @@ import { DashboardService } from '../dashboard.service';
   styleUrls: ['./video-dashboard.component.scss'],
 })
 export class VideoDashboardComponent implements OnInit {
-  videos: Video[] = [];
+  videos: Observable<Video[]>;
   selectedVideo: Video | undefined;
-  constructor(private dashboardService: DashboardService) {
-    dashboardService.videos.subscribe((videoList) => (this.videos = videoList));
+  constructor(dashboardService: DashboardService) {
+    this.videos = dashboardService.videos;
   }
 
   ngOnInit(): void {}

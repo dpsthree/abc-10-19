@@ -4,7 +4,7 @@
       <app-video-list
         (selectVideo)="updateSelectedVideo($event)"
         [selectedVideo]="selectedVideo"
-        [videoList]="videos"
+        [videoList]="(videos | async) || []"
       ></app-video-list>
     </div>
     <div class="col s3">
